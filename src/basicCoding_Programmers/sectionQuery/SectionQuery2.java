@@ -1,8 +1,8 @@
 package basicCoding_Programmers.sectionQuery;
 
-import java.util.ArrayList;
+
 import java.util.Arrays;
-import java.util.List;
+
 
 public class SectionQuery2 {
     public static void main(String[] args) {

@@ -1,10 +1,13 @@
 import org.w3c.dom.ls.LSOutput;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        int a = 1;
-        int b = 32;
-        System.out.println(Integer.parseInt(""+a+b));
+        int[] even = {3, 4};
+        int[] odd = {3, 4};
+
+        System.out.println(even);
     }
 
 }
