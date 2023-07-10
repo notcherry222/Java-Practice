@@ -1,4 +1,4 @@
-package basicCoding_Programmers.sectionQuery;
+package basicCoding_Programmers.query;
 
 
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package basicCoding_Programmers.queryThird;
+package basicCoding_Programmers.query;
 
 import java.util.Arrays;
 
