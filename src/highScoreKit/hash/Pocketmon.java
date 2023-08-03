@@ -1,3 +1,5 @@
+package highScoreKit.hash;
+
 import java.util.*;
 
 class Pocketmon {
