@@ -1,12 +1,13 @@
 package highScoreKit.hash;
 
+import java.util.HashSet;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class NumberBook {
     public boolean solution(String[] phone_book) {
 
-        SortedSet<String> s = new TreeSet<>();
+        HashSet<String> s = new HashSet<>();
 
         for(String num : phone_book){
             for(String str : s) {

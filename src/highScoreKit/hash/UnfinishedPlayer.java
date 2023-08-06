@@ -14,6 +14,12 @@ public class UnfinishedPlayer {
             for(String str : completion){
                 map.put(str, map.get(str)-1);
             }
+            for(String key : map.keySet()){
+                if(map.get(key)==1){
+                    answer = key;
+                    break;
+                }
+            }
 
             return answer;
         }
