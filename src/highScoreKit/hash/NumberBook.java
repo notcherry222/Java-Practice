@@ -1,17 +1,15 @@
 package highScoreKit.hash;
 
+import java.util.Arrays;
 import java.util.HashSet;
-import java.util.SortedSet;
-import java.util.TreeSet;
-
 public class NumberBook {
     public boolean solution(String[] phone_book) {
 
-        HashSet<String> s = new HashSet<>();
+        HashSet<String> s = new HashSet<>(Arrays.asList(phone_book));
 
         for(String num : phone_book){
-            for(String str : s) {
-                if (num.startsWith(str) || str.startsWith(num)) {
+            for(int i =0; i<num.length();i++) {
+                if (s.contains(num.substring(0,i))) {
                     return false;
                 }
                 s.add(num);
