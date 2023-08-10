@@ -1,12 +1,15 @@
 package highScoreKit.hash;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class DontLikeSameNum {
     public int[] solution(int[] arr) {
 
-//        HashSet<Integer> s = new HashSet<Integer>(Integer.parseInt(Arrays.asList(arr).toString()));
-//
+        Set<Integer> s = Arrays.stream(arr)
+                                .boxed()
+                                .collect(Collectors.toSet());
+
 //        for(int i = 0 ; i< arr.length ; i++){
 //            s.add(arr[i]);
 //        }
