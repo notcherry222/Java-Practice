@@ -23,12 +23,9 @@ public class 올바른괄호 {
                 }
             }
         }
-
         if (!stack.isEmpty()) { // 스택에 남아있는 열린 괄호가 있다면 올바르지 않은 괄호
             answer = false;
         }
-
-
         return answer;
     }
 }
