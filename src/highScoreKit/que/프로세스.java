@@ -7,13 +7,20 @@ public class 프로세스 {
     public int solution(int[] priorities, int location) {
 
         Queue<Integer> q = new LinkedList<>();
-        int answer = 0;
 
-        for(int i =0 ; i<priorities.length;i++){
-            q.offer(priorities[i]);
+        q.offer(priorities[0]);
+
+        for(int i = 1;i<priorities.length; i++){
+            if(q.peek() >=priorities[i]) {
+                q.offer(priorities[i]);
+            }else{
+                while(!q.isEmpty() && q.peek()<priorities[i]){
+                    q.poll();
+                }
+                q.offer(priorities[i]);
+            }
         }
 
-
-        return answer;
+        return ((LinkedList<Integer>) q).get(location);
     }
 }
