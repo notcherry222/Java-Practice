@@ -9,7 +9,7 @@ public class 주식가격 {
 
         for(int i  =0; i<prices.length; i++){
             while(!stack.isEmpty() && prices[i] < prices[stack.peek()]){
-                answer[stack.peek()] = i-stack.peek();
+                answer[stack.peek()] = i-stack.peek(); //todo : peek + pop = poll 아닌가요? -> 런타임 에러 발생
                 stack.pop();
             }
             stack.push(i);

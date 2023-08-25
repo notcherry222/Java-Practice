@@ -17,7 +17,6 @@ public class 스코빌지수 {
             q.offer(n);
         }
        while(q.peek()<K){
-
             int a = q.poll();
             if(q.isEmpty()){
                 return -1;}
