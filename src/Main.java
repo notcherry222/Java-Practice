@@ -1,30 +1,17 @@
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 
 public class Main {
-        public String[] solution(String myString) {
+        public int[] solution(int[] array, int[][] commands) {
 
-            StringBuilder ans = new StringBuilder();
-            ArrayList<String> answerl = new ArrayList<>();
+            
+            int[] answer = new int[commands.length];
 
-            for(char str : myString.toCharArray()){
-                if(str !='x'){
-                    ans.append(str);
-                }else
-                {
-                    if(ans.length()>0){
-                        answerl.add(ans.toString());
-                        ans.setLength(0);}}
+            for(int i =0 ; i< commands.length; i++){
+                int[] a = Arrays.copyOfRange(array, commands[i][0] - 1, commands[i][1] - 1);
+                 Arrays.sort(a);
+                answer[i] = a[commands[i][2]];
             }
-
-            if(ans.length()>0){ answerl.add(ans.toString());}
-
-            Collections.sort(answerl);
-            String[] answer = new String[answerl.size()];
-            for(int i =0 ; i< answerl.size();i++){
-                answer[i] = answerl.get(i);
-            }
-
             return answer;
 
     }
