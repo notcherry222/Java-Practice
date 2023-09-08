@@ -1,5 +1,7 @@
 package highScoreKit.정렬;
 
+import java.util.Arrays;
+
 public class K번째수 {
     public int[] solution(int[] array, int[][] commands) {
         int[] answer = new int[commands.length];
