@@ -7,15 +7,14 @@ import java.util.Queue;
 public class H_index {
     public int solution(int[] citations) {
 
+        int cnt = 0;
         Arrays.sort(citations);
-        int n = citations.length;
-        int answer = 0;
 
-        for(int i =0; i < n ; i++){
-            if(citations[i]>){
-
+        for(int i =0 ; i<citations.length; i++){
+            if(citations[i] <= citations.length -i){
+                return citations[i];
             }
         }
-        return answer;
+        return cnt;
     }
 }
