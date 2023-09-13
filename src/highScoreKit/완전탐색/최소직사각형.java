@@ -15,20 +15,19 @@ public class 최소직사각형 {
             w[i] = max(sizes[i][0],sizes[i][1]);
             l[i] = min(sizes[i][0],sizes[i][1]);
         }
-        for(int i =1 ; i<w.length; i++){
-            if(w[i]>w[i-1]){
-                m1 = w[i];
-            }
-            if(w[0]>m1){
-                m1 = w[0];
-            }
-            if(l[i]>l[i-1]){
-                m2 = l[i];
-            }
-            if(l[0]>m2){
-                m2 = l[0];
-            }
+        for(int i =0 ; i<w.length; i++){
+            m1 = max(m1, w[i]);
+            m2 = max(m2, l[i]);
         }
+
+        /** 이해 안 감
+         *   int length = 0, height = 0;
+         *         for (int[] card : sizes) {
+         *             length = Math.max(length, Math.max(card[0], card[1]));
+         *             height = Math.max(height, Math.min(card[0], card[1]));
+         *         }
+         *         int answer = length * height;
+         */
         return m1*m2;
     }
 }
