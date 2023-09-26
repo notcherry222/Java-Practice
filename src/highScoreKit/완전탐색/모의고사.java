@@ -18,12 +18,10 @@ public class 모의고사 {
         for(int i=0; i<answers.length; i++){
             if(answers[i] == student1[i]){
                 cnt1++;}
-        }
-        for(int i=0; i<answers.length; i++){
+
             if(answers[i] == student1[i]){
                 cnt2++;}
-        }
-        for(int i=0; i<answers.length; i++){
+
             if(answers[i] == student1[i]) {
                 cnt3++;}
         }
@@ -39,13 +37,11 @@ public class 모의고사 {
 
         for(Map.Entry<Integer, Integer> entry: map.entrySet()){
             int value = entry.getValue();
-
             //최댓값 갱신
             if(value > max){
                 max = value;
-                maxKeys = new ArrayList<>();
                 maxKeys.add(entry.getKey());
-            } else if(value == max) {
+            } if(value == max) {
                 maxKeys.add(entry.getKey());
             }
         }
