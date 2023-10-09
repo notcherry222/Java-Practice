@@ -1,6 +1,6 @@
 package highScoreKit.완전탐색;
 
-public class 전력망을_둘로_나누기 {
+public class Union_find {
     static int[] parent;
     private static boolean union(int x, int y){
         x = find(x); //x의 부모 찾기
@@ -19,8 +19,4 @@ public class 전력망을_둘로_나누기 {
         return find(parent[x]);
     }
 
-    public int solution(int n, int[][] wires) {
-        int answer = -1;
-        return answer;
-    }
 }
