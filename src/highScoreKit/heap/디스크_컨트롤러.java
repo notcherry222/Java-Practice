@@ -12,11 +12,11 @@ public class 디스크_컨트롤러 {
             q.offer(jobs[0][i]);
         }
 
-        while(!q.isEmpty()){
-            if(q.){
-
-            }
-        }
+//        while(!q.isEmpty()){
+//            if(q.){
+//
+//            }
+//        }
         return answer/l;
     }
 }
