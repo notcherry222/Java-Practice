@@ -1,4 +1,4 @@
-package 백준.브론즈2;
+package 백준.브론즈;
 
 import java.io.BufferedReader;
 import java.io.IOException;
