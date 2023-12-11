@@ -14,21 +14,25 @@ public class D_DAY {
         int[] end = new int[3];
         String[] first = br.readLine().split(" ");
         String[] second = br.readLine().split(" ");
+        int answer = 0;
 
         for(int i = 0; i<3; i++) {
            start[i] = Integer.parseInt(first[i]);
            end[i] = Integer.parseInt(second[i]);
         }
+        //같은 해인지? -> 맞다면? 월/일 계산
+        //           -> 아니라면? 윤월인지? -> 맞다면? 366-start
+        //                               -> 아니라면? 365-start
+        //마지막해는 그냥 +하기
 
-        if((start[0] + 1000) >= end[0]) {
-            if(end[1] > start[1]) {
-                System.out.println("gg");
-            } else if(start[1] == end[1] && start[2] < end[2]) {
-                System.out.println("gg");
-            }
+        if(start[0] == end[0]) {
+
         } else {
-           int y = end[0] - start[0];
+            if(start[0] % 4 ==0 || start[0] % 400 == 0) {
 
+            } else{
+
+            }
         }
     }
 }
