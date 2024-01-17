@@ -17,55 +17,58 @@ public class 에디터 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String input[] = br.readLine().split("");
-        int num = Integer.parseInt(br.readLine());
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        Stack<String> left = new Stack<>(); //처음 커서
-        Stack<String> right = new Stack<>();
+        String str = br.readLine();
+        int M = Integer.parseInt(br.readLine());
 
-        for(String i : input) {
-            left.push(i);
+        Stack<String> leftSt = new Stack<String>();
+        Stack<String> rightSt = new Stack<String>();
+
+        //처음 커서는 문장의 맨 뒤에서 시작하기 때문에 왼쪽 스택에 초기 문자를 모두 넣어줌 (ex. abc|)
+        String[] arr = str.split("");
+        for(String s : arr) { //Enhanced For Loop 사용
+            leftSt.push(s);
         }
 
-        for (int i =0; i<num; i++) {
+        for(int i = 0; i < M; i++) {
             String command = br.readLine();
-            Character c = command.charAt(0);
+            char c = command.charAt(0);
 
-            switch (c) {
-                case 'L' :
-                    if (!left.isEmpty()) {
-                        right.push(left.pop());
+            switch(c) {
+                case 'L':
+                    if(!leftSt.isEmpty())
+                        rightSt.push(leftSt.pop());
+
+                    break;
+                case 'D':
+                    if(!rightSt.isEmpty())
+                        leftSt.push(rightSt.pop());
+
+                    break;
+                case 'B':
+                    if(!leftSt.isEmpty()) {
+                        leftSt.pop();
                     }
                     break;
-                case 'D' :
-                    if(!right.isEmpty()) {
-                        left.pop();
-                    }
-                    break;
-                case 'B' :
-                    if(!left.isEmpty()) {
-                        left.pop();
-                    }
-                    break;
-                case 'P' :
+                case 'P':
                     char t = command.charAt(2);
-                    left.push(String.valueOf(t));
-                default:break;
+                    leftSt.push(String.valueOf(t));
+                    break;
+                default:
+                    break;
             }
-
         }
 
-            while(!left.isEmpty())
-                right.push(left.pop());
+        //Stack은 LIFO 구조이기 때문에
+        //왼쪽 스택에 있는 데이터들을 모두 오른쪽으로 옮긴 뒤에 오른쪽에 있는 모든 내용을 출력한다.
+        while(!leftSt.isEmpty())
+            rightSt.push(leftSt.pop());
 
-            int size = right.size();
-            StringBuilder answer = new StringBuilder();
+        while(!rightSt.isEmpty())
+            bw.write(rightSt.pop());
 
-            while(!right.isEmpty()){
-                answer.append(right.pop());
-            }
-            System.out.println(" ");
-            System.out.print(answer);
-
+        bw.flush();
+        bw.close();
     }
 }
