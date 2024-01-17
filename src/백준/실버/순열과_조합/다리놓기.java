@@ -1,4 +1,4 @@
-package 백준.실버;
+package 백준.실버.순열과_조합;
 
 import java.io.BufferedReader;
 import java.io.IOException;

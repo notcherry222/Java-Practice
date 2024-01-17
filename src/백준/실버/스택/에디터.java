@@ -1,4 +1,4 @@
-package 백준.실버;
+package 백준.실버.스택;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -9,7 +9,7 @@ import java.util.Stack;
 
 /**
  * L : 왼쪽으로 이동
- * D : 오른쪽으로 이동
+ * D : 오른쪽으로 문자 삭제
  * B: 왼쪽에 있는 문자 삭제
  * P $ : $라는 문자를 커서 왼쪽에 추가
  */
@@ -17,8 +17,6 @@ public class 에디터 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
         String input[] = br.readLine().split("");
         int num = Integer.parseInt(br.readLine());
 
@@ -31,7 +29,7 @@ public class 에디터 {
 
         for (int i =0; i<num; i++) {
             String command = br.readLine();
-            char c = command.charAt(0);
+            Character c = command.charAt(0);
 
             switch (c) {
                 case 'L' :
@@ -52,17 +50,22 @@ public class 에디터 {
                 case 'P' :
                     char t = command.charAt(2);
                     left.push(String.valueOf(t));
-                default: break;
+                default:break;
             }
+
+        }
 
             while(!left.isEmpty())
                 right.push(left.pop());
 
-            while (!right.isEmpty())
-                bw.write(right.pop());
+            int size = right.size();
+            StringBuilder answer = new StringBuilder();
 
-            bw.flush();
-            bw.close();;
-        }
+            while(!right.isEmpty()){
+                answer.append(right.pop());
+            }
+            System.out.println(" ");
+            System.out.print(answer);
+
     }
 }
