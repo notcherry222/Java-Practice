@@ -1,4 +1,4 @@
-package 백준.실버.스택;
+package 백준.골드.스택;
 
 import java.io.BufferedReader;
 import java.io.IOException;
