@@ -17,14 +17,14 @@ public class 탑 {
 
         for (int i = 1; i <= n; i++) {
             int top = Integer.parseInt(st.nextToken());
-            while(!stack.empty()){
+            while(!stack.isEmpty()){
                 if(stack.peek()[0] > top){
                     answer.append(stack.peek()[1] + " ");
                     break;
                 }
                 stack.pop();
             }
-            if(stack.empty())
+            if(stack.isEmpty())
                 answer.append("0 ");
             stack.push(new int[] {top, i});
         }
