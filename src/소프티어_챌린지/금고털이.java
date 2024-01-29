@@ -17,6 +17,19 @@ public class 금고털이 {
             gold.add(new int[] {Integer.parseInt(command[0]), Integer.parseInt(command[1])});
         }
 
+        /**
+         * // 첫번째 index 기준 오름차순
+         * return o1[0]-o2[0];
+         *
+         * // 첫번째 index 기준 내림차순
+         * return o2[0]-o1[0];
+         *
+         * // 두번째 index 기준 오름차순
+         * return o1[1]-o2[1];
+         *
+         * // 두번째 index 기준 내림차순
+         * return o2[1]-o1[1];
+         */
         Collections.sort(gold, (o1, o2) -> o2[1]-o1[1]);
 
         for(int[] item:gold) {
