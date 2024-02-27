@@ -31,7 +31,7 @@ public class 주몽의명령 {
                 j--;
             } else{
                 count++;
-                i++; j++;
+                i++; j--;
             }
         }
         System.out.println(count);
