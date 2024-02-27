@@ -1,4 +1,4 @@
-package 백준.브론즈;
+package 백준.실버.정렬;
 
 import java.io.BufferedReader;
 import java.io.IOException;
