@@ -9,10 +9,10 @@ import java.util.ArrayList;
  * 백준 1707
  */
 public class 이분_그래프_판별하기 {
-    static ArrayList<Integer>[] a;
+    static ArrayList<Integer>[] a; //인접 리스트
     static int[] check; //같은 집합인지 체크
     static boolean[] visited;
-    static boolean IsEven;
+    static boolean IsEven; // 이분 그래프 판별
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int testCase = Integer.parseInt(br.readLine());
@@ -20,10 +20,10 @@ public class 이분_그래프_판별하기 {
             String[] s = br.readLine().split(" ");
             int v = Integer.parseInt(s[0]);
             int e = Integer.parseInt(s[1]);
-            a = new ArrayList[v+1];
+            a = new ArrayList[v+1]; //0번째 사용 안 하고 싶음! 1부터~
             visited = new boolean[v+1];
             check = new int[v+1];
-            IsEven = true;
+            IsEven = true; //처음에는 이분 그래프다! 라고 판별
             for(int i = 1; i<=v; i++) {
                 a[i] = new ArrayList<Integer>();
             }
@@ -44,11 +44,12 @@ public class 이분_그래프_판별하기 {
                 }else {
                     break;
                 }
-                if (IsEven) {
-                    System.out.println("YES");
-                } else {
-                    System.out.println("NO");
-                }
+            }
+
+            if (IsEven) {
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
             }
         }
     }
@@ -59,8 +60,8 @@ public class 이분_그래프_판별하기 {
                 //바로 직전 노드와 다른 집합으로 분류 해주는 것이 필요
                 check[i] = (check[start] + 1) %2; //1,0으로 분류
                 DFS(i);
-            } else {
-                if (check[start] == check[i]){
+            } else { //이미 방문한 노드라면
+                if (check[start] == check[i]){ //그리고 똑같은 집합이라면
                     IsEven = false;
                 }
             }
