@@ -3,7 +3,6 @@ package 백준.실버.탐색;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
@@ -64,7 +63,7 @@ public class 전투_강사님_추천 {
             for(int k = 0; k<4; k++){
                 int x = now[0] + dx[k];
                 int y = now[1] + dy[k];
-                if(x>=0 && y>=0 && x<n && y<m) {
+                if(x>=0 && y>=0 && x<m && y<n) {
                     if (!visited[x][y] && ch == map[x][y]) {
                         visited[x][y] = true;
                         q.add(new int[] {x,y});
