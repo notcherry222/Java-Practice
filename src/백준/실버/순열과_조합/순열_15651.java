@@ -26,7 +26,7 @@ public class 순열_15651 {
                 sb.append(arr[i]).append(' ');
             }
             sb.append('\n');
-            return;
+            return; //재귀 호출 종료
         }
         for(int i = 1; i<=n; i++) {
             arr[depth] = i;
