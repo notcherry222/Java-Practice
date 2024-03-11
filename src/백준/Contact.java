@@ -25,41 +25,45 @@ public class Contact {
             for(int j=0; j<line.length(); j++) {
                 q.add(Integer.parseInt(line.substring(j,j+1)));
             }
+            if (q.size() <2) {
+                System.out.println("NO");
+            } else {
 
-            while(!q.isEmpty()) {
+            while(q.size() == 1) {
                 int a = q.poll();
                 if(a == 0 && q.peek() == 1) {
                     q.poll();
                 } else {
-                    if(q.poll() == 0&& q.peek() == 0) {
-                        while(q.peek() == 0) {
+                    if(q.peek() == 0) {
+                        q.poll();
+                        if(q.peek() == 0) {
                             q.poll();
-                        }
-                        if(q.peek() == 1) {
-                            q.poll();
+                            if(q.peek() == 1){
+                                q.poll();
+                            } else{
+                                answer = false;
+                                break;
+                            }
+                        } else{
+                            answer = false;
+                            break;
                         }
                     } else {
-                        answer = false;
-                        break;
+                        q.poll();
                     }
                 }
             }
+            if(q.peek() != 1) {
+                answer =false;
+            }
 
-            if (!answer) {
-                if(i <t-1) {
+            if (answer) {
                     System.out.println("NO");
-                } else {
-
-                    System.out.print("NO");
-                }
             }
-            else {if(i <t-1) {
+            else {
                 System.out.println("YES");
-            } else{
-                System.out.print("YES");
-            }
             }
             answer = true;
-        }
+        }}
     }
 }
