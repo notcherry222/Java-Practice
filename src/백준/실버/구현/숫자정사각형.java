@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 /**
  * 1051
  * 10:55 -11:9
- * 9:23
+ * 9:23-9:37
  */
 public class 숫자정사각형 {
     static int n,m,answer;
